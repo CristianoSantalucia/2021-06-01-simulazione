@@ -66,8 +66,6 @@ public class Genes {
 	public String toString() {
 		return this.geneId;
 	}
-
-
 	
 	
 

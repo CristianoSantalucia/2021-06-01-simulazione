@@ -13,21 +13,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="525.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.genes.FXMLController">
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.genes.FXMLController">
    <top>
       <Label text="Simulazione d'esame 01/06/2021 Genes" BorderPane.alignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
          <BorderPane.margin>
-            <Insets bottom="20.0" left="20.0" right="20.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
       </Label>
    </top>
    <center>
-      <VBox prefHeight="437.0" prefWidth="512.0" BorderPane.alignment="CENTER">
+      <VBox BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCreaGrafo" mnemonicParsing="false" onAction="#doCreaGrafo" prefHeight="25.0" prefWidth="429.0" text="Crea Grafo">
+            <Button fx:id="btnCreaGrafo" mnemonicParsing="false" onAction="#doCreaGrafo" prefWidth="400.0" text="Crea Grafo">
                <VBox.margin>
                   <Insets left="50.0" right="50.0" />
                </VBox.margin>
@@ -52,12 +52,12 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <ComboBox fx:id="cmbGeni" prefHeight="25.0" prefWidth="277.0" GridPane.columnIndex="1">
+                  <ComboBox fx:id="cmbGeni" disable="true" onAction="#doGeniAdiacenti" prefHeight="25.0" prefWidth="246.0" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ComboBox>
-                  <Button fx:id="btnGeniAdiacenti" mnemonicParsing="false" onAction="#doGeniAdiacenti" prefHeight="25.0" prefWidth="100.0" text="Geni Adiacenti" GridPane.columnIndex="2">
+                  <Button fx:id="btnGeniAdiacenti" disable="true" mnemonicParsing="false" onAction="#doGeniAdiacenti" prefWidth="100.0" text="Geni Adiacenti" GridPane.columnIndex="2">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
@@ -67,20 +67,22 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtIng" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button fx:id="btnSimula" mnemonicParsing="false" onAction="#doSimula" prefHeight="25.0" prefWidth="100.0" text="Simulazione" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <TextField fx:id="txtIng" disable="true" onAction="#doSimula" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="btnSimula" disable="true" mnemonicParsing="false" onAction="#doSimula" prefWidth="100.0" text="Simulazione" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
                </children>
             </GridPane>
-            <TextArea fx:id="txtResult" prefHeight="332.0" prefWidth="472.0">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="20.0" right="20.0" />
-               </VBox.margin>
-            </TextArea>
          </children>
       </VBox>
    </center>
+   <bottom>
+      <TextArea fx:id="txtResult" editable="false" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </BorderPane.margin>
+      </TextArea>
+   </bottom>
 </BorderPane>
