@@ -5,6 +5,7 @@
 package it.polito.tdp.genes;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.genes.model.Genes;
@@ -80,9 +81,32 @@ public class FXMLController
 		this.txtResult.appendText(this.model.stampaAdiacenti(g));
 	}
 
+	
+	
 	@FXML void doSimula(ActionEvent event)
 	{
+		Integer numIng;
+		try
+		{
+			numIng = Integer.parseInt(this.txtIng.getText());
+			if(numIng < 0)
+				throw new NumberFormatException(); 
+		}
+		catch(NumberFormatException nfe)
+		{
+			this.txtResult.appendText("\n\nErrore, inserire un numero corretto");
+			return;
+		} 
 		
+		Genes g = this.cmbGeni.getValue(); 
+		if (g == null)
+		{
+			this.txtResult.appendText("\n\nErrore, scegliere elemento dalla lista");
+			return;
+		} 
+		
+		
+		model.simula(numIng,g);
 	}
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
