@@ -77,7 +77,7 @@ public class FXMLController
 			return;
 		} 
 		
-		this.txtResult.appendText("\nGeni adiacenti a " + g + ":\n");
+		this.txtResult.appendText("\n\nGeni adiacenti a " + g + ":\n");
 		this.txtResult.appendText(this.model.stampaAdiacenti(g));
 	}
 
